@@ -3,18 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NAJJA.WEB.ID — Galeri Pendaki & Gunung Nusantara</title>
+  <title>NAJJA.WEB.ID — Galeri Pendaki &amp; Daftar Gunung Pendakian Indonesia</title>
   <style>
     :root {
-      --bg: #0f1210;
-      --surface: #171c19;
-      --surface-2: #1f2622;
-      --text: #f3f5f3;
-      --muted: #a6b0a9;
-      --accent: #d9a760;
-      --accent-soft: rgba(217, 167, 96, 0.14);
+      --bg: #0f1411;
+      --surface: #171e1a;
+      --surface-2: #202924;
+      --text: #f3f6f4;
+      --muted: #a7b3ab;
+      --accent: #4caf50;
+      --accent-gold: #e0b062;
+      --accent-soft: rgba(76, 175, 80, 0.16);
       --border: rgba(255, 255, 255, 0.09);
-      --radius: 14px;
+      --radius: 12px;
     }
 
     * {
@@ -28,8 +29,8 @@
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: var(--bg);
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg);
       color: var(--text);
       line-height: 1.6;
     }
@@ -39,25 +40,18 @@
       text-decoration: none;
     }
 
-    img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* Header / Navigasi */
+    /* Header Navigasi */
     header {
       position: sticky;
       top: 0;
       z-index: 40;
-      background: rgba(15, 18, 16, 0.88);
-      backdrop-filter: blur(12px);
+      background: rgba(15, 20, 17, 0.9);
+      backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
     }
 
     .nav-wrap {
-      max-width: 1220px;
+      max-width: 1180px;
       margin: 0 auto;
       padding: 14px 20px;
       display: flex;
@@ -69,9 +63,9 @@
 
     .brand {
       font-weight: 800;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.1em;
+      color: var(--accent-gold);
       font-size: 1.05rem;
-      color: var(--accent);
     }
 
     nav {
@@ -86,60 +80,54 @@
       color: var(--text);
     }
 
-    /* Hero */
-    .hero {
-      max-width: 1220px;
+    .container {
+      max-width: 1180px;
       margin: 0 auto;
-      padding: 48px 20px 32px;
-      display: grid;
-      gap: 18px;
+      padding: 24px 20px 48px;
     }
 
-    .eyebrow {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--accent);
-      font-weight: 700;
+    /* Banner Utama */
+    .hero {
+      text-align: center;
+      padding: 28px 20px;
+      background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+      color: #ffffff;
+      border-radius: var(--radius);
+      margin-bottom: 32px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
     }
 
-    h1 {
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      line-height: 1.15;
-      max-width: 24ch;
+    .hero h1 {
+      font-size: clamp(1.65rem, 3.6vw, 2.4rem);
+      margin-bottom: 8px;
     }
 
-    .lead {
-      color: var(--muted);
-      max-width: 68ch;
-      font-size: 1rem;
+    .hero p {
+      font-size: 0.98rem;
+      color: #e8f5e9;
+      max-width: 72ch;
+      margin: 0 auto 14px;
     }
 
     .stats {
       display: flex;
-      gap: 12px;
+      justify-content: center;
+      gap: 10px;
       flex-wrap: wrap;
-      margin-top: 6px;
     }
 
     .stat-pill {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      padding: 8px 14px;
+      background: rgba(0, 0, 0, 0.24);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      padding: 6px 14px;
       border-radius: 999px;
       font-size: 0.84rem;
-      color: var(--muted);
+      color: #ffffff;
     }
 
-    .stat-pill strong {
-      color: var(--text);
-    }
-
-    /* Section */
     section {
-      max-width: 1220px;
-      margin: 0 auto;
-      padding: 36px 20px;
+      margin-top: 38px;
+      padding-top: 28px;
       border-top: 1px solid var(--border);
     }
 
@@ -147,29 +135,38 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      gap: 16px;
+      gap: 14px;
       flex-wrap: wrap;
-      margin-bottom: 22px;
+      margin-bottom: 18px;
     }
 
     .sec-title {
-      font-size: clamp(1.35rem, 2.5vw, 1.9rem);
+      font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+      color: var(--text);
     }
 
     .sec-sub {
       color: var(--muted);
       font-size: 0.92rem;
-      max-width: 58ch;
       margin-top: 4px;
     }
 
-    /* Controls */
+    .counter-pill {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 6px 13px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    /* Filter & Pencarian */
     .controls {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
       align-items: center;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .filter-btn {
@@ -178,15 +175,13 @@
       border: 1px solid var(--border);
       padding: 8px 14px;
       border-radius: 999px;
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       cursor: pointer;
-      transition: 0.2s ease;
     }
 
-    .filter-btn:hover,
     .filter-btn.active {
       background: var(--accent);
-      color: #121212;
+      color: #ffffff;
       border-color: var(--accent);
       font-weight: 700;
     }
@@ -197,7 +192,7 @@
       color: var(--text);
       border: 1px solid var(--border);
       padding: 9px 14px;
-      border-radius: 10px;
+      border-radius: 8px;
       font-size: 0.88rem;
       outline: none;
     }
@@ -208,15 +203,10 @@
       max-width: 340px;
     }
 
-    .search-input:focus,
-    .select-input:focus {
-      border-color: var(--accent);
-    }
-
-    /* Gallery Grid */
+    /* Galeri 200 Pendaki */
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
       gap: 14px;
     }
 
@@ -233,19 +223,24 @@
 
     .card:hover {
       transform: translateY(-3px);
-      border-color: rgba(217, 167, 96, 0.5);
+      border-color: rgba(76, 175, 80, 0.55);
     }
 
-    .thumb {
+    .art-box {
       aspect-ratio: 4 / 5;
       background: var(--surface-2);
-      overflow: hidden;
+    }
+
+    .art-box svg {
+      width: 100%;
+      height: 100%;
+      display: block;
     }
 
     .card-body {
       padding: 12px;
       display: grid;
-      gap: 6px;
+      gap: 5px;
     }
 
     .tag-row {
@@ -259,12 +254,12 @@
       padding: 2px 8px;
       border-radius: 999px;
       background: var(--accent-soft);
-      color: var(--accent);
+      color: #81c784;
       font-weight: 600;
     }
 
     .tag.alt {
-      background: rgba(255, 255, 255, 0.06);
+      background: rgba(255, 255, 255, 0.07);
       color: var(--muted);
     }
 
@@ -279,22 +274,21 @@
     }
 
     .load-more-wrap {
-      margin-top: 24px;
+      margin-top: 20px;
       display: flex;
-      gap: 12px;
-      align-items: center;
+      gap: 10px;
       justify-content: center;
       flex-wrap: wrap;
     }
 
     .btn-primary {
-      background: var(--accent);
-      color: #121212;
+      background: #2e7d32;
+      color: #ffffff;
       border: none;
       padding: 10px 18px;
-      border-radius: 10px;
+      border-radius: 8px;
       font-weight: 700;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       cursor: pointer;
     }
 
@@ -303,75 +297,69 @@
       color: var(--text);
       border: 1px solid var(--border);
       padding: 10px 18px;
-      border-radius: 10px;
-      font-size: 0.9rem;
+      border-radius: 8px;
+      font-size: 0.88rem;
       cursor: pointer;
     }
 
-    /* Mountains Grid */
-    .mountains-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-      gap: 18px;
+    /* Judul Pulau & Tabel Gunung */
+    h2.island-heading {
+      color: #81c784;
+      border-bottom: 2px solid #2e7d32;
+      padding-bottom: 6px;
+      margin-top: 26px;
+      margin-bottom: 12px;
+      font-size: 1.3rem;
     }
 
-    .m-card {
+    .table-container {
+      overflow-x: auto;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+      margin-bottom: 18px;
     }
 
-    .m-photo {
-      aspect-ratio: 16 / 10;
-      background: var(--surface-2);
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
     }
 
-    .m-content {
-      padding: 16px;
-      display: grid;
-      gap: 10px;
+    th, td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
     }
 
-    .m-prov {
+    th {
+      background-color: #2e7d32;
+      color: #ffffff;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    tr:hover {
+      background-color: var(--surface-2);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 8px;
       font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--accent);
       font-weight: 700;
+      border-radius: 5px;
+      color: #ffffff;
+      white-space: nowrap;
     }
 
-    .m-name {
-      font-size: 1.1rem;
-      font-weight: 800;
-    }
+    .pemula { background-color: #4caf50; }
+    .menengah { background-color: #ef6c00; }
+    .mahir { background-color: #d32f2f; }
 
-    .m-desc {
-      font-size: 0.88rem;
-      color: var(--muted);
-    }
-
-    .m-info {
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 10px 12px;
-      font-size: 0.82rem;
-      display: grid;
-      gap: 5px;
-    }
-
-    .m-info strong {
-      color: var(--text);
-    }
-
-    .m-info span {
-      color: var(--muted);
-    }
-
-    /* Lightbox Modal */
+    /* Modal */
     .modal {
       position: fixed;
       inset: 0;
@@ -391,16 +379,25 @@
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      max-width: 780px;
+      max-width: 720px;
       width: 100%;
       overflow: hidden;
       display: grid;
       grid-template-columns: 1fr 1fr;
     }
 
-    .modal-img {
-      min-height: 300px;
-      max-height: 75vh;
+    .modal-art {
+      background: var(--surface-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 280px;
+    }
+
+    .modal-art svg {
+      width: 100%;
+      height: 100%;
+      max-height: 420px;
     }
 
     .modal-detail {
@@ -422,22 +419,17 @@
     }
 
     footer {
-      max-width: 1220px;
-      margin: 24px auto 0;
-      padding: 28px 20px 44px;
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 24px;
       border-top: 1px solid var(--border);
+      font-size: 0.86rem;
       color: var(--muted);
-      font-size: 0.85rem;
-      display: grid;
-      gap: 8px;
     }
 
     @media (max-width: 720px) {
       .modal-box {
         grid-template-columns: 1fr;
-      }
-      .modal-img {
-        max-height: 320px;
       }
     }
   </style>
@@ -448,37 +440,36 @@
       <a href="#" class="brand">NAJJA.WEB.ID</a>
       <nav>
         <a href="#galeri-pendaki">200 Galeri Pendaki</a>
-        <a href="#gunung-indonesia">Gunung per Provinsi</a>
-        <a href="#catatan">Catatan &amp; Estimasi</a>
+        <a href="#daftar-gunung">Daftar Gunung Indonesia</a>
+        <a href="#catatan">Catatan</a>
       </nav>
     </div>
   </header>
 
-  <main>
+  <div class="container">
     <div class="hero">
-      <span class="eyebrow">Jejak Kaki, Puncak &amp; Cerita Perjalanan</span>
-      <h1>Galeri Pencinta Gunung &amp; Panduan Jalur Pendakian Nusantara</h1>
-      <p class="lead">
-        Kurasi <strong>200 potret pencinta gunung</strong> (80% pendaki wanita berhijab maupun non-hijab, lokal dan mancanegara) serta katalog <strong>gunung pendakian di provinsi-provinsi Indonesia</strong> lengkap dengan karakter gunung, jalur <em>track</em>, dan perkiraan biaya.
+      <h1>Galeri Pencinta Gunung &amp; Daftar Gunung Pendakian di Indonesia</h1>
+      <p>
+        Kurasi <strong>200 karakter pencinta gunung</strong> (80% wanita berhijab maupun non-hijab, lokal dan mancanegara) serta panduan lengkap lokasi, ketinggian, tingkat kesulitan, jalur <em>track</em>, estimasi biaya, dan daya tarik gunung pendakian di Nusantara.
       </p>
       <div class="stats">
-        <div class="stat-pill"><strong>200</strong> Foto Pendaki</div>
-        <div class="stat-pill"><strong>80%</strong> Pendaki Wanita (Hijab &amp; Non-Hijab)</div>
+        <div class="stat-pill"><strong>200</strong> Karakter Pendaki</div>
+        <div class="stat-pill"><strong>80%</strong> Wanita (Hijab &amp; Non-Hijab)</div>
         <div class="stat-pill"><strong>Lokal &amp; Mancanegara</strong></div>
-        <div class="stat-pill" id="mountainCountPill"><strong>38</strong> Gunung Provinsi</div>
+        <div class="stat-pill"><strong>7</strong> Wilayah Kepulauan Indonesia</div>
       </div>
     </div>
 
-    <!-- BAGIAN 1: 200 FOTO PENDAKI -->
+    <!-- BAGIAN 1: 200 KARAKTER PENDAKI -->
     <section id="galeri-pendaki">
       <div class="sec-head">
         <div>
           <h2 class="sec-title">Galeri 200 Pencinta Gunung</h2>
           <p class="sec-sub">
-            Klik kartu foto untuk melihat detail. Gunakan filter di bawah untuk menyaring pendaki wanita berhijab, pendaki wanita non-hijab, pendaki lokal, atau mancanegara.
+            160 karakter wanita (80 berhijab &amp; 80 non-hijab) dan 40 pencinta gunung lainnya (lokal &amp; mancanegara). Klik kartu untuk melihat detail.
           </p>
         </div>
-        <div id="galleryCounter" class="stat-pill">Menampilkan 0 dari 200 foto</div>
+        <div id="galleryCounter" class="counter-pill">Menampilkan 0 dari 200</div>
       </div>
 
       <div class="controls">
@@ -494,156 +485,128 @@
 
       <div class="load-more-wrap">
         <button id="loadMoreBtn" class="btn-primary">Tampilkan Lebih Banyak</button>
-        <button id="showAllBtn" class="btn-secondary">Tampilkan Semua Sekaligus</button>
+        <button id="showAllBtn" class="btn-secondary">Tampilkan Semua (200)</button>
       </div>
     </section>
 
-    <!-- BAGIAN 2: GUNUNG PER PROVINSI INDONESIA -->
-    <section id="gunung-indonesia">
+    <!-- BAGIAN 2: DAFTAR GUNUNG PENDAKIAN DI INDONESIA -->
+    <section id="daftar-gunung">
       <div class="sec-head">
         <div>
-          <h2 class="sec-title">Gunung Pendakian di Seluruh Provinsi Indonesia</h2>
+          <h2 class="sec-title">Daftar Gunung Populer untuk Trek Pendakian di Indonesia</h2>
           <p class="sec-sub">
-            Mencakup perwakilan gunung pendakian di 38 provinsi Indonesia (puncak utama maupun bukit/gunung pendakian populer di provinsi yang belum memiliki puncak tinggi ekstrem).
+            Panduan lokasi, ketinggian, tingkat kesulitan, jalur <em>track</em>, perkiraan biaya, dan daya tarik utama per wilayah.
           </p>
         </div>
-        <div id="mountainCounter" class="stat-pill">Menampilkan 38 gunung</div>
+        <div id="mountainCounter" class="counter-pill">Menampilkan semua gunung</div>
       </div>
 
       <div class="controls">
         <select id="islandFilter" class="select-input">
-          <option value="all">Semua Wilayah / Pulau</option>
-          <option value="Sumatra">Sumatra</option>
-          <option value="Jawa">Jawa</option>
-          <option value="Bali & Nusa Tenggara">Bali &amp; Nusa Tenggara</option>
-          <option value="Kalimantan">Kalimantan</option>
-          <option value="Sulawesi">Sulawesi</option>
-          <option value="Maluku">Maluku</option>
-          <option value="Papua">Papua</option>
+          <option value="all">Semua Wilayah</option>
+          <option value="1. Pulau Jawa">1. Pulau Jawa</option>
+          <option value="2. Pulau Sumatera">2. Pulau Sumatera</option>
+          <option value="3. Bali dan Nusa Tenggara">3. Bali dan Nusa Tenggara</option>
+          <option value="4. Pulau Kalimantan">4. Pulau Kalimantan</option>
+          <option value="5. Pulau Sulawesi">5. Pulau Sulawesi</option>
+          <option value="6. Maluku">6. Maluku</option>
+          <option value="7. Papua">7. Papua</option>
         </select>
-        <input type="search" id="mountainSearch" class="search-input" placeholder="Cari provinsi, nama gunung, atau jalur..." />
+        <input type="search" id="mountainSearch" class="search-input" placeholder="Cari gunung, lokasi, jalur, atau daya tarik..." />
       </div>
 
-      <div id="mountainsGrid" class="mountains-grid"></div>
+      <div id="mountainsContainer"></div>
     </section>
 
     <footer id="catatan">
-      <strong>Catatan Katalog &amp; Estimasi Biaya:</strong>
-      <p>
-        1. Seluruh foto menggunakan tautan gambar publik siap pakai dan otomatis memakai gambar cadangan aman jika koneksi sedang memblokir sumber tertentu.
-      </p>
-      <p>
-        2. Angka estimasi biaya pada daftar gunung merupakan gambaran umum per orang di luar tiket transportasi antarkota/antarprovinsi, sewa alat/porter pribadi, dan pembaruan tarif resmi pengelola/taman nasional.
-      </p>
+      <p><strong>NAJJA.WEB.ID</strong> — Galeri Pencinta Gunung &amp; Panduan Trek Pendakian Nusantara.</p>
+      <p>Perkiraan biaya bersifat estimasi umum per orang di luar transportasi jauh, sewa alat/porter pribadi, dan perubahan tarif resmi pengelola/taman nasional.</p>
     </footer>
-  </main>
+  </div>
 
-  <!-- Modal Detail Foto -->
+  <!-- Modal Detail Karakter -->
   <div id="photoModal" class="modal" role="dialog" aria-modal="true">
     <div class="modal-box">
-      <div class="modal-img">
-        <img id="modalImg" src="" alt="" />
-      </div>
+      <div id="modalArt" class="modal-art"></div>
       <div class="modal-detail">
         <div>
           <button id="closeModal" class="close-btn">Tutup (Esc)</button>
           <div id="modalTags" class="tag-row" style="margin-top: 12px;"></div>
           <h3 id="modalTitle" style="margin-top: 12px; font-size: 1.2rem;"></h3>
           <p id="modalSub" style="color: var(--muted); font-size: 0.88rem; margin-top: 4px;"></p>
-          <p id="modalQuote" style="margin-top: 14px; font-size: 0.92rem; color: var(--text);"></p>
+          <p id="modalQuote" style="margin-top: 14px; font-size: 0.92rem;"></p>
         </div>
         <p style="font-size: 0.78rem; color: var(--muted);">
-          Sumber foto publik: Unsplash / Pexels (otomatis fallback lokal jika offline/terblokir).
+          Ilustrasi karakter pendaki — NAJJA.WEB.ID
         </p>
       </div>
     </div>
   </div>
 
   <script>
-    // Gambar cadangan SVG ringan agar tidak pernah blank saat offline/terblokir
-    function makeFallbackDataUri(label, bg = "#1e2722", fg = "#d9a760") {
-      const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="600" height="750" viewBox="0 0 600 750">
-        <rect width="600" height="750" fill="${bg}"/>
-        <polygon points="0,560 190,330 340,490 480,300 600,450 600,750 0,750" fill="#131916"/>
-        <circle cx="470" cy="150" r="52" fill="${fg}" opacity="0.22"/>
-        <text x="50%" y="660" text-anchor="middle" fill="${fg}" font-family="sans-serif" font-size="22" font-weight="bold">${label}</text>
-      </svg>`;
-      return "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg);
+    const PALETTES = [
+      { bg: "#172621", hill1: "#233b32", hill2: "#12201b", jacket: "#d97757", gear: "#e0b062", hijab: "#f3e5ab", hair: "#2b1d16" },
+      { bg: "#16212c", hill1: "#24374a", hill2: "#111b24", jacket: "#4ea8de", gear: "#f4a261", hijab: "#e9d8a6", hair: "#1f1815" },
+      { bg: "#271d1c", hill1: "#3d2c29", hill2: "#1c1413", jacket: "#e07a5f", gear: "#f2cc8f", hijab: "#f8edeb", hair: "#3a2518" },
+      { bg: "#1c2419", hill1: "#2e3d28", hill2: "#141b12", jacket: "#81b29a", gear: "#e9c46a", hijab: "#dce1de", hair: "#231914" }
+    ];
+
+    function renderCharacterSvg(item) {
+      const p = PALETTES[item.id % PALETTES.length];
+      let headArt = "";
+
+      if (item.genderGroup === "wanita-hijab") {
+        headArt = `
+          <path d="M122 86 C122 52, 178 52, 178 86 L186 126 C186 134, 114 134, 114 126 Z" fill="${p.hijab}"/>
+          <ellipse cx="150" cy="96" rx="20" ry="23" fill="#f1c29b"/>
+          <circle cx="142" cy="95" r="2.2" fill="#1b1b1b"/>
+          <circle cx="158" cy="95" r="2.2" fill="#1b1b1b"/>
+          <path d="M145 106 Q150 110 155 106" stroke="#8d5542" stroke-width="2" fill="none" stroke-linecap="round"/>
+        `;
+      } else if (item.genderGroup === "wanita-nonhijab") {
+        headArt = `
+          <path d="M123 90 C123 52, 177 52, 177 90 L181 122 L119 122 Z" fill="${p.hair}"/>
+          <ellipse cx="150" cy="95" rx="19" ry="22" fill="#f3c69f"/>
+          <circle cx="142" cy="94" r="2.2" fill="#1b1b1b"/>
+          <circle cx="158" cy="94" r="2.2" fill="#1b1b1b"/>
+          <path d="M145 105 Q150 110 155 105" stroke="#8d5542" stroke-width="2" fill="none" stroke-linecap="round"/>
+        `;
+      } else {
+        headArt = `
+          <path d="M128 84 C130 56, 170 56, 172 84 Z" fill="${p.hair}"/>
+          <ellipse cx="150" cy="95" rx="19" ry="22" fill="#eab68c"/>
+          <circle cx="142" cy="94" r="2.2" fill="#1b1b1b"/>
+          <circle cx="158" cy="94" r="2.2" fill="#1b1b1b"/>
+          <path d="M145 106 Q150 109 155 106" stroke="#7c4a38" stroke-width="2" fill="none" stroke-linecap="round"/>
+        `;
+      }
+
+      return `
+        <svg viewBox="0 0 300 375" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${item.name}">
+          <rect width="300" height="375" fill="${p.bg}"/>
+          <circle cx="235" cy="68" r="26" fill="${p.gear}" opacity="0.22"/>
+          <polygon points="0,255 95,155 185,245 300,145 300,375 0,375" fill="${p.hill1}"/>
+          <polygon points="0,295 120,205 230,285 300,225 300,375 0,375" fill="${p.hill2}"/>
+          <rect x="112" y="122" width="76" height="86" rx="18" fill="${p.gear}" opacity="0.9"/>
+          <path d="M112 128 Q150 116 188 128 L200 230 L100 230 Z" fill="${p.jacket}"/>
+          <rect x="122" y="230" width="20" height="62" rx="8" fill="#2b3330"/>
+          <rect x="158" y="230" width="20" height="62" rx="8" fill="#2b3330"/>
+          <rect x="118" y="286" width="28" height="12" rx="5" fill="${p.gear}"/>
+          <rect x="154" y="286" width="28" height="12" rx="5" fill="${p.gear}"/>
+          <line x1="204" y1="168" x2="222" y2="298" stroke="#cbd5e1" stroke-width="3.5" stroke-linecap="round"/>
+          ${headArt}
+          <rect x="18" y="330" width="264" height="30" rx="8" fill="rgba(0,0,0,0.45)"/>
+          <text x="150" y="350" text-anchor="middle" fill="#f4f6f4" font-family="sans-serif" font-size="12" font-weight="bold">${item.hijabLabel} • ${item.origin}</text>
+        </svg>
+      `;
     }
 
-    // Kumpulan URL foto publik siap pakai bertema pendaki, alam, dan gunung
-    const PHOTO_POOLS = {
-      hijab: [
-        "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80"
-      ],
-      nonHijab: [
-        "https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1522163182402-834f871fd851?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=800&q=80"
-      ],
-      otherHiker: [
-        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80"
-      ],
-      mountain: [
-        "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=75",
-        "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=900&q=75",
-        "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=900&q=75",
-        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=75",
-        "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=900&q=75"
-      ]
-    };
-
-    // Data 200 Pendaki (160 Wanita [80%] + 40 Pencinta Gunung Lainnya [20%])
-    const HIJAB_NAMES = [
-      "Nadia Kusuma", "Aisyah Rahma", "Siti Nurhaliza", "Fatimah Azzahra", "Rani Puspita",
-      "Dina Marlina", "Khairunnisa", "Zahra Amalia", "Yuni Safitri", "Intan Permata",
-      "Amina Al-Mansoor", "Zainab Hassan", "Layla Farhana", "Mariam Al-Karim", "Yasmin Tariq",
-      "Salma Darwish"
-    ];
-
-    const NONHIJAB_NAMES = [
-      "Clara Wijaya", "Tania Santoso", "Maya Anggraini", "Vina Lestari", "Kirana Putri",
-      "Siska Pratama", "Melati Kurnia", "Dewi Maharani", "Chloe Bennett", "Hannah Miller",
-      "Elena Rostova", "Sofia Lindqvist", "Mei-Ling Zhou", "Aiko Takahashi", "Isabella Rossi",
-      "Camila Morales"
-    ];
-
-    const OTHER_NAMES = [
-      "Raka Pratama", "Bima Saputra", "Dimas Nugroho", "Fajar Ramadhan", "Lucas Weber",
-      "Noah Anderson", "Liam O'Connor", "Kenji Sato"
-    ];
-
-    const ORIGINS_LOKAL = [
-      "Bandung", "Jakarta", "Yogyakarta", "Malang", "Bogor", "Surabaya",
-      "Medan", "Padang", "Makassar", "Denpasar", "Lombok", "Banjarmasin"
-    ];
-
-    const ORIGINS_INTL = [
-      "Malaysia", "Singapura", "Jepang", "Jerman", "Amerika Serikat",
-      "Australia", "Korea Selatan", "Belanda", "Prancis", "Kanada"
-    ];
-
-    const PEAKS = [
-      "Gn. Gede", "Gn. Prau", "Gn. Rinjani", "Gn. Semeru", "Gn. Kerinci",
-      "Gn. Merbabu", "Gn. Latimojong", "Gn. Agung", "Gn. Papandayan", "Dolomites",
-      "Fuji", "Kinabalu", "Annapurna", "Zugspitze"
-    ];
-
+    const HIJAB_NAMES = ["Nadia Kusuma", "Aisyah Rahma", "Siti Nurhaliza", "Fatimah Azzahra", "Rani Puspita", "Dina Marlina", "Khairunnisa", "Zahra Amalia", "Amina Mansoor", "Zainab Hassan", "Layla Farhana", "Yasmin Tariq"];
+    const NONHIJAB_NAMES = ["Clara Wijaya", "Tania Santoso", "Maya Anggraini", "Vina Lestari", "Kirana Putri", "Siska Pratama", "Chloe Bennett", "Hannah Miller", "Elena Rostova", "Sofia Lindqvist", "Aiko Takahashi", "Isabella Rossi"];
+    const OTHER_NAMES = ["Raka Pratama", "Bima Saputra", "Dimas Nugroho", "Fajar Ramadhan", "Lucas Weber", "Noah Anderson", "Liam O'Connor", "Kenji Sato"];
+    const LOKAL_PLACES = ["Bandung", "Jakarta", "Yogyakarta", "Malang", "Bogor", "Surabaya", "Medan", "Padang", "Makassar", "Lombok"];
+    const INTL_PLACES = ["Malaysia", "Singapura", "Jepang", "Jerman", "Amerika Serikat", "Australia", "Korea Selatan", "Belanda"];
+    const PEAKS = ["Gn. Gede", "Gn. Prau", "Gn. Rinjani", "Gn. Semeru", "Gn. Kerinci", "Gn. Merbabu", "Gn. Latimojong", "Gn. Agung", "Fuji", "Kinabalu"];
     const QUOTES = [
       "Langkah pelan di ketinggian mengajarkan sabar yang tak terburu-buru.",
       "Angin puncak selalu menyisakan tenang setelah tanjakan panjang.",
@@ -653,44 +616,24 @@
 
     function build200Hikers() {
       const list = [];
-      // Total 200: 160 wanita (80%) -> 80 wanita berhijab + 80 wanita non-hijab; 40 lainnya (20%)
       for (let i = 1; i <= 200; i++) {
-        let genderGroup, hijabLabel, originGroup, origin, name, imgUrl, fallbackLabel;
-
+        let genderGroup, hijabLabel, originGroup, origin, name;
         if (i <= 160) {
-          // 80% Wanita
-          const isHijab = i <= 80; // 80 berhijab + 80 non-hijab = 160 wanita
-          const isLocal = i % 2 === 1; // 50% lokal, 50% mancanegara di tiap kelompok
+          const isHijab = i <= 80;
+          const isLocal = i % 2 === 1;
           genderGroup = isHijab ? "wanita-hijab" : "wanita-nonhijab";
           hijabLabel = isHijab ? "Wanita Berhijab" : "Wanita Non-Hijab";
           originGroup = isLocal ? "lokal" : "mancanegara";
-          origin = isLocal
-            ? ORIGINS_LOKAL[i % ORIGINS_LOKAL.length]
-            : ORIGINS_INTL[i % ORIGINS_INTL.length];
-          name = isHijab
-            ? HIJAB_NAMES[i % HIJAB_NAMES.length] + " #" + i
-            : NONHIJAB_NAMES[i % NONHIJAB_NAMES.length] + " #" + i;
-          imgUrl = isHijab
-            ? PHOTO_POOLS.hijab[i % PHOTO_POOLS.hijab.length]
-            : PHOTO_POOLS.nonHijab[i % PHOTO_POOLS.nonHijab.length];
-          fallbackLabel = `${hijabLabel} • ${origin}`;
+          origin = isLocal ? LOKAL_PLACES[i % LOKAL_PLACES.length] : INTL_PLACES[i % INTL_PLACES.length];
+          name = (isHijab ? HIJAB_NAMES[i % HIJAB_NAMES.length] : NONHIJAB_NAMES[i % NONHIJAB_NAMES.length]) + " #" + i;
         } else {
-          // 20% Pencinta Gunung Lainnya (40 foto)
           const isLocal = i % 2 === 0;
           genderGroup = "lainnya";
           hijabLabel = "Pencinta Gunung";
           originGroup = isLocal ? "lokal" : "mancanegara";
-          origin = isLocal
-            ? ORIGINS_LOKAL[i % ORIGINS_LOKAL.length]
-            : ORIGINS_INTL[i % ORIGINS_INTL.length];
+          origin = isLocal ? LOKAL_PLACES[i % LOKAL_PLACES.length] : INTL_PLACES[i % INTL_PLACES.length];
           name = OTHER_NAMES[i % OTHER_NAMES.length] + " #" + i;
-          imgUrl = PHOTO_POOLS.otherHiker[i % PHOTO_POOLS.otherHiker.length];
-          fallbackLabel = `Pendaki • ${origin}`;
         }
-
-        const peak = PEAKS[i % PEAKS.length];
-        const quote = QUOTES[i % QUOTES.length];
-
         list.push({
           id: i,
           name,
@@ -699,63 +642,85 @@
           originGroup,
           originLabel: originGroup === "lokal" ? "Lokal" : "Mancanegara",
           origin,
-          peak,
-          quote,
-          imgUrl,
-          fallback: makeFallbackDataUri(fallbackLabel)
+          peak: PEAKS[i % PEAKS.length],
+          quote: QUOTES[i % QUOTES.length]
         });
       }
       return list;
     }
 
-    // 38 Gunung / Destinasi Pendakian Perwakilan 38 Provinsi Indonesia
-    const MOUNTAINS_38 = [
-      { prov: "Aceh", island: "Sumatra", name: "Gunung Burni Telong (2.624 mdpl)", desc: "Gunung api stratovolcano di dataran tinggi Gayo dengan panorama kawah dan kebun kopi.", track: "Jalur Rembele / Pante Raya (±5–7 jam naik)", cost: "Rp150.000 – Rp350.000 (tiket, ojek basecamp, logistik)" },
-      { prov: "Sumatera Utara", island: "Sumatra", name: "Gunung Sibayak (2.212 mdpl)", desc: "Gunung api aktif dekat Berastagi yang populer untuk pendakian singkat dan pemandian air panas.", track: "Jalur 54 / Jaranguda (±2,5–4 jam naik)", cost: "Rp100.000 – Rp250.000 (tiket masuk, transportasi lokal, makan)" },
-      { prov: "Sumatera Barat", island: "Sumatra", name: "Gunung Kerinci (3.805 mdpl)", desc: "Gunung berapi tertinggi di Indonesia dan Asia Tenggara dengan hutan hujan lebat dan kawah aktif.", track: "Jalur Kersik Tuo / Tugu Macan (2–3 hari / ±8–10 jam ke puncak)", cost: "Rp450.000 – Rp950.000 (izin TNKS, ojek, logistik, tenda)" },
-      { prov: "Riau", island: "Sumatra", name: "Bukit Condong / Kawasan Hutan Lindung Bukit Bungkuk", desc: "Alternatif jalur trekking hutan tropis & perbukitan di Riau karena tidak memiliki puncak vulkanik tinggi.", track: "Jalur setapak hutan & perbukitan (1 hari / ±3–5 jam)", cost: "Rp75.000 – Rp200.000 (transportasi lokal, air & bekal)" },
-      { prov: "Kepulauan Riau", island: "Sumatra", name: "Gunung Bintan Besar (340 mdpl)", desc: "Puncak tertinggi di Pulau Bintan dengan jalur tanah merah, hutan tropis, dan pemandangan pesisir.", track: "Jalur Kampung Bekapur / Bintan Buyu (±2–3 jam naik)", cost: "Rp75.000 – Rp200.000 (tiket/izin lokal, transport, logistik)" },
-      { prov: "Jambi", island: "Sumatra", name: "Gunung Masurai (2.935 mdpl)", desc: "Dikenal dengan Danau Kumbang di ketinggian serta padang rumput dan jalur menantang di Kerinci-Jambi.", track: "Jalur Sungai Lalang / Tanjung Kasri (2 hari)", cost: "Rp300.000 – Rp650.000 (izin, transport lokal, logistik)" },
-      { prov: "Sumatera Selatan", island: "Sumatra", name: "Gunung Dempo (3.159 mdpl)", desc: "Puncak tertinggi di Sumatera Selatan yang dikelilingi hamparan kebun teh Pagar Alam dan kawah luas.", track: "Jalur Tugu Rimau / Kampung IV (1–2 hari)", cost: "Rp200.000 – Rp450.000 (retribusi, transport, konsumsi)" },
-      { prov: "Bengkulu", island: "Sumatra", name: "Bukit Kaba (1.938 mdpl)", desc: "Gunung api di Rejang Lebong dengan beberapa kawah warna-warni dan akses yang relatif ramah pendaki.", track: "Jalur Sumber Urip / Karang Jaya (±3–4 jam naik)", cost: "Rp120.000 – Rp280.000 (tiket masuk, transport, bekal)" },
-      { prov: "Lampung", island: "Sumatra", name: "Gunung Pesagi (2.262 mdpl)", desc: "Titik tertinggi di Lampung dengan nuansa hutan lumut dan sejarah budaya Lampung Barat.", track: "Jalur Pekon Hujung / Bahway (±4–6 jam naik)", cost: "Rp150.000 – Rp320.000 (tiket/izin, ojek/transport, logistik)" },
-      { prov: "Kepulauan Bangka Belitung", island: "Sumatra", name: "Gunung Maras (699 mdpl)", desc: "Puncak tertinggi di Pulau Bangka dengan jalur hutan tropis, bebatuan granit, dan udara sejuk.", track: "Jalur Desa Petaling / Gunung Muda (±3–4 jam naik)", cost: "Rp100.000 – Rp250.000 (transportasi lokal, konsumsi)" },
-
-      { prov: "DKI Jakarta", island: "Jawa", name: "Bukit / Trekking Hutan Kota & Wisata Alam Sekitar", desc: "Wilayah metropolitan tanpa gunung pendakian; pendaki Jakarta umumnya berlatih di bukit/hutan sekitar.", track: "Jalur trekking/trail ringan (1 hari)", cost: "Rp50.000 – Rp150.000 (tiket masuk kawasan & konsumsi)" },
-      { prov: "Jawa Barat", island: "Jawa", name: "Gunung Gede (2.958 mdpl)", desc: "Ikon pendakian Jawa Barat di TNGGP dengan Alun-Alun Suryakencana, air terjun, dan hutan montana.", track: "Jalur Cibodas / Gunung Putri (1–2 hari)", cost: "Rp250.000 – Rp550.000 (simaksi TNGGP, registrasi, logistik)" },
-      { prov: "Jawa Tengah", island: "Jawa", name: "Gunung Prau (2.565 mdpl)", desc: "Favorit pendaki pemula hingga menengah dengan bukit teletubbies dan panorama sunrise barisan gunung Jawa.", track: "Jalur Patak Banteng / Dieng / Wates (1–2 hari)", cost: "Rp180.000 – Rp400.000 (tiket basecamp, ojek opsional, makan)" },
-      { prov: "DI Yogyakarta", island: "Jawa", name: "Gunung Api Purba Nglanggeran (700 mdpl)", desc: "Gunung purba berbatuan vulkanik raksasa di Gunungkidul yang cocok untuk pendakian singkat & sunrise.", track: "Jalur Kampung Puncak / Embung Nglanggeran (±1,5–2,5 jam)", cost: "Rp75.000 – Rp180.000 (tiket masuk, parkir, konsumsi)" },
-      { prov: "Jawa Timur", island: "Jawa", name: "Gunung Semeru (3.676 mdpl)", desc: "Atap Pulau Jawa di TNBTS dengan Ranu Kumbolo, Tanjakan Cinta, dan puncak Mahameru berkarakter pasir-batu.", track: "Jalur Ranu Pani – Ranu Kumbolo – Kalimati (3–4 hari)", cost: "Rp450.000 – Rp950.000 (simaksi TNBTS, surat sehat, logistik)" },
-      { prov: "Banten", island: "Jawa", name: "Gunung Karang (1.778 mdpl)", desc: "Gunung tertinggi di Banten yang menawarkan pemandangan Selat Sunda dan jalur hutan yang rindang.", track: "Jalur Kaduengang / Ciekek (1–2 hari)", cost: "Rp150.000 – Rp320.000 (tiket masuk, transport, konsumsi)" },
-
-      { prov: "Bali", island: "Bali & Nusa Tenggara", name: "Gunung Agung (3.142 mdpl)", desc: "Gunung tertinggi dan paling sakral di Bali dengan panorama kawah dan pemandangan Selat Lombok.", track: "Jalur Pura Pasar Agung / Besakih (1–2 hari)", cost: "Rp350.000 – Rp850.000 (tiket, pemandu lokal disarankan, logistik)" },
-      { prov: "Nusa Tenggara Barat", island: "Bali & Nusa Tenggara", name: "Gunung Rinjani (3.726 mdpl)", desc: "Gunung berapi ikonik di Lombok dengan Danau Segara Anak, pemandian air panas, dan savana luas.", track: "Jalur Sembalun / Senaru / Aik Berik (2–4 hari)", cost: "Rp650.000 – Rp1.500.000 (tiket TNGR, asuransi, logistik)" },
-      { prov: "Nusa Tenggara Timur", island: "Bali & Nusa Tenggara", name: "Gunung Mutis (2.427 mdpl)", desc: "Puncak tertinggi di Timor Barat dengan hutan ampupu unik dan suasana adat yang kental.", track: "Jalur Fatumnasi / Nenas (1–2 hari)", cost: "Rp250.000 – Rp600.000 (izin kawasan, transport, konsumsi)" },
-
-      { prov: "Kalimantan Barat", island: "Kalimantan", name: "Gunung Raya (2.278 mdpl)", desc: "Puncak tertinggi di Kalimantan Barat di kawasan Cagar Alam Raya Pasi dengan jalur hutan hujan lebat.", track: "Jalur Rantau Panjang / Bengkayang (2–3 hari)", cost: "Rp300.000 – Rp650.000 (izin, transport, logistik)" },
-      { prov: "Kalimantan Tengah", island: "Kalimantan", name: "Bukit Raya (2.278 mdpl)", desc: "Salah satu puncak tertinggi di Pulau Kalimantan di Taman Nasional Bukit Baka Bukit Raya.", track: "Jalur Rantau Malam / Tumbang Haboi (3–5 hari)", cost: "Rp500.000 – Rp1.100.000 (izin TN, transport sungai/darat, logistik)" },
-      { prov: "Kalimantan Selatan", island: "Kalimantan", name: "Gunung Besar / Halau-Halau (1.892 mdpl)", desc: "Puncak tertinggi di Pegunungan Meratus, Kalimantan Selatan, dengan trek hutan tropis dan sungai.", track: "Jalur Kiyu / Hinas Kiri (2–3 hari)", cost: "Rp250.000 – Rp550.000 (izin/transport lokal, konsumsi)" },
-      { prov: "Kalimantan Timur", island: "Kalimantan", name: "Gunung Beratus / Hutan Lindung Sungai Wain", desc: "Alternatif pendakian & trekking alam di Kalimantan Timur dengan ekosistem hutan hujan tropis.", track: "Jalur trekking & perbukitan (1–2 hari)", cost: "Rp150.000 – Rp350.000 (tiket/izin, transport, bekal)" },
-      { prov: "Kalimantan Utara", island: "Kalimantan", name: "Bukit / Jalur Rimba Malinau & Kayan Mentarang", desc: "Kawasan konservasi berhutan lebat di utara Kalimantan dengan jalur pendakian rimba dan budaya lokal.", track: "Jalur trekking hutan & perbukitan (1–3 hari)", cost: "Rp300.000 – Rp700.000 (izin, transport lokal, logistik)" },
-
-      { prov: "Sulawesi Selatan", island: "Sulawesi", name: "Gunung Latimojong / Bulu Rante Mario (3.478 mdpl)", desc: "Atap Pulau Sulawesi yang terkenal dengan jalur akar, tanjakan terjal, dan hutan lumut yang sejuk.", track: "Jalur Karangan (2–4 hari)", cost: "Rp350.000 – Rp750.000 (registrasi, ojek/transport, logistik)" },
-      { prov: "Sulawesi Tengah", island: "Sulawesi", name: "Gunung Nokilalaki (2.355 mdpl)", desc: "Puncak di kawasan Taman Nasional Lore Lindu dengan danau di puncak dan keanekaragaman hayati tinggi.", track: "Jalur Kamarora / Lindu (2–3 hari)", cost: "Rp300.000 – Rp650.000 (izin TNLL, transport, konsumsi)" },
-      { prov: "Sulawesi Tenggara", island: "Sulawesi", name: "Gunung Mekongga (2.620 mdpl)", desc: "Puncak tertinggi di Sulawesi Tenggara dengan jalur hutan tropis yang menantang.", track: "Jalur Tinukari / Kolaka Utara (2–3 hari)", cost: "Rp300.000 – Rp650.000 (izin, transport, logistik)" },
-      { prov: "Sulawesi Utara", island: "Sulawesi", name: "Gunung Klabat (1.995 mdpl)", desc: "Gunung tertinggi di Sulawesi Utara yang menyajikan panorama Teluk Manado dan kawah di puncak.", track: "Jalur Airmadidi (1 hari / ±4–6 jam naik)", cost: "Rp120.000 – Rp280.000 (tiket, transport, konsumsi)" },
-      { prov: "Gorontalo", island: "Sulawesi", name: "Gunung Tilongkabila / Hutan Konservasi Nantu", desc: "Destinasi pendakian & penjelajahan alam di Gorontalo dengan lanskap perbukitan dan hutan tropis.", track: "Jalur trekking / pendakian (1–2 hari)", cost: "Rp150.000 – Rp350.000 (izin/transport lokal, bekal)" },
-      { prov: "Sulawesi Barat", island: "Sulawesi", name: "Gunung Gandang Dewata (3.074 mdpl)", desc: "Puncak tertinggi di Sulawesi Barat di perbatasan Mamasa & Mamuju dengan trek hutan hujan yang sunyi.", track: "Jalur Rante Pongko / Mamasa (3–5 hari)", cost: "Rp450.000 – Rp950.000 (izin, transport, logistik)" },
-
-      { prov: "Maluku", island: "Maluku", name: "Gunung Binaiya (3.027 mdpl)", desc: "Salah satu dari 7 Puncak Tertinggi Indonesia di Pulau Seram, terkenal dengan sungai bawah tanah & trek berat.", track: "Jalur Piliana / Kanikeh / Masohi (4–7 hari)", cost: "Rp750.000 – Rp1.600.000 (izin TN Manusela, kapal/transport, logistik)" },
-      { prov: "Maluku Utara", island: "Maluku", name: "Gunung Gamalama (1.715 mdpl)", desc: "Gunung api ikonik di Pulau Ternate dengan pemandangan laut Maluku dan kota bersejarah di bawahnya.", track: "Jalur Moya / Kelurahan Marikurubu (1 hari / ±3–5 jam)", cost: "Rp120.000 – Rp280.000 (tiket, transport lokal, konsumsi)" },
-
-      { prov: "Papua", island: "Papua", name: "Pegunungan Cyclops / Bukit & Puncak Sekitar Jayapura", desc: "Kawasan pegunungan pesisir dengan hutan tropis lebat dan pemandangan Danau Sentani.", track: "Jalur trekking / pendakian (1–2 hari)", cost: "Rp250.000 – Rp600.000 (izin/transport lokal, konsumsi)" },
-      { prov: "Papua Barat", island: "Papua", name: "Pegunungan Arfak (Puncak Irene / Laraan ±2.955 mdpl)", desc: "Dataran tinggi sejuk di Manokwari dengan Danau Anggi Giji & Anggi Gida serta hutan pegunungan.", track: "Jalur Danau Anggi / Manokwari (2–3 hari)", cost: "Rp450.000 – Rp950.000 (transport, penginapan/logistik)" },
-      { prov: "Papua Barat Daya", island: "Papua", name: "Puncak / Perbukitan Raja Ampat & Sorong", desc: "Destinasi pendakian bukit panorama gugusan pulau karst & hutan tropis di Papua Barat Daya.", track: "Jalur bukit panorama / trail (1 hari)", cost: "Rp200.000 – Rp500.000 (transport/perahu lokal, bekal)" },
-      { prov: "Papua Tengah", island: "Papua", name: "Puncak Jaya / Carstensz Pyramid (4.884 mdpl)", desc: "Puncak tertinggi di Indonesia dan Oseania; pendakian teknis berbatu/glasial yang memerlukan persiapan khusus.", track: "Jalur Sugapa / Lembah Kuning (ekspedisi berizin & terencana)", cost: "Sangat tinggi / ekspedisi khusus (hubungi operator resmi & balai terkait)" },
-      { prov: "Papua Selatan", island: "Papua", name: "Kawasan Savana & Jalur Alam Merauke", desc: "Lanskap savana luas di ujung timur Nusantara yang lebih cocok untuk jelajah alam darat daripada puncak tinggi.", track: "Jalur jelajah alam & savana (1 hari)", cost: "Rp150.000 – Rp350.000 (transport lokal, konsumsi)" },
-      { prov: "Papua Pegunungan", island: "Papua", name: "Pegunungan Jayawijaya / Lembah Baliem", desc: "Dataran tinggi pegunungan tengah Papua dengan udara sejuk, lembah luas, dan budaya lokal yang khas.", track: "Jalur trekking lembah & perbukitan (2–4 hari)", cost: "Rp500.000 – Rp1.100.000 (transport lokal, akomodasi/logistik)" }
+    const MOUNTAIN_GROUPS = [
+      {
+        island: "1. Pulau Jawa",
+        items: [
+          { name: "Gunung Semeru", loc: "Jawa Timur", elev: "3.676 mdpl", level: "mahir", levelText: "Mahir", track: "Ranu Pani – Ranu Kumbolo – Kalimati (3–4 hari)", cost: "Rp450.000 – Rp950.000", highlight: "Danau Ranu Kumbolo & Puncak Mahameru" },
+          { name: "Gunung Merbabu", loc: "Jawa Tengah", elev: "3.142 mdpl", level: "menengah", levelText: "Menengah", track: "Selo / Suwanting / Wekas (1–2 hari)", cost: "Rp180.000 – Rp400.000", highlight: "Padang sabana luas & panorama gunung Jawa" },
+          { name: "Gunung Lawu", loc: "Jateng – Jatim", elev: "3.265 mdpl", level: "menengah", levelText: "Menengah", track: "Cemoro Sewu / Cemoro Kandang / Cetho (1–2 hari)", cost: "Rp180.000 – Rp420.000", highlight: "Jalur bersejarah & sabana Candi Cetho" },
+          { name: "Gunung Prau", loc: "Jawa Tengah", elev: "2.565 mdpl", level: "pemula", levelText: "Pemula", track: "Patak Banteng / Dieng / Wates (1–2 hari)", cost: "Rp180.000 – Rp400.000", highlight: "Golden sunrise kawasan Dieng" },
+          { name: "Gunung Sumbing & Sindoro", loc: "Jawa Tengah", elev: "3.371 / 3.153 mdpl", level: "menengah", levelText: "Menengah", track: "Garung / Bowongso (Sumbing) & Kledung (Sindoro)", cost: "Rp220.000 – Rp480.000", highlight: "Dua gunung kembar dengan trek terjal" },
+          { name: "Gunung Argopuro", loc: "Jawa Timur", elev: "3.088 mdpl", level: "mahir", levelText: "Mahir", track: "Baderan – Rawa Embik – Cikasur – Bremi (3–5 hari)", cost: "Rp450.000 – Rp950.000", highlight: "Trek terpanjang di Jawa & Sabana Cikasur" },
+          { name: "Gunung Gede & Pangrango", loc: "Jawa Barat", elev: "2.958 / 3.019 mdpl", level: "menengah", levelText: "Pemula - Menengah", track: "Cibodas / Gunung Putri (1–2 hari)", cost: "Rp250.000 – Rp550.000", highlight: "Alun-alun Suryakencana & Mandalawangi" },
+          { name: "Gunung Papandayan", loc: "Jawa Barat", elev: "2.665 mdpl", level: "pemula", levelText: "Pemula", track: "Cisurupan / Camp David – Pondok Saladah (1–2 hari)", cost: "Rp150.000 – Rp350.000", highlight: "Kawah belerang, Hutan Mati & Pondok Saladah" },
+          { name: "Gunung Ijen", loc: "Jawa Timur", elev: "2.386 mdpl", level: "pemula", levelText: "Pemula", track: "Paltuding – Kawah Ijen (±2–3 jam naik)", cost: "Rp150.000 – Rp350.000", highlight: "Fenomena api biru (blue fire) & danau kawah" }
+        ]
+      },
+      {
+        island: "2. Pulau Sumatera",
+        items: [
+          { name: "Gunung Kerinci", loc: "Jambi – Sumbar", elev: "3.805 mdpl", level: "mahir", levelText: "Mahir", track: "Kersik Tuo / Tugu Macan (2–3 hari)", cost: "Rp450.000 – Rp950.000", highlight: "Gunung berapi tertinggi di Indonesia" },
+          { name: "Gunung Leuser", loc: "Aceh", elev: "3.404 mdpl", level: "mahir", levelText: "Mahir", track: "Kedah / Blangkejeren (5–8 hari)", cost: "Rp800.000 – Rp1.800.000", highlight: "Trek hutan hujan tropis terpanjang di Indonesia" },
+          { name: "Gunung Marapi & Singgalang", loc: "Sumatera Barat", elev: "2.891 / 2.877 mdpl", level: "menengah", levelText: "Menengah", track: "Koto Baru / Batu Palano (Marapi) & Pandai Sikek (Singgalang)", cost: "Rp200.000 – Rp450.000", highlight: "Telaga Dewi & panorama alam Minangkabau" },
+          { name: "Gunung Dempo", loc: "Sumatera Selatan", elev: "3.173 mdpl", level: "menengah", levelText: "Menengah", track: "Tugu Rimau / Kampung IV (1–2 hari)", cost: "Rp200.000 – Rp450.000", highlight: "Hamparan kebun teh & hutan lumut" },
+          { name: "Gunung Sibayak", loc: "Sumatera Utara", elev: "2.212 mdpl", level: "pemula", levelText: "Pemula", track: "54 / Jaranguda (±2,5–4 jam naik)", cost: "Rp100.000 – Rp250.000", highlight: "Trek singkat dekat Berastagi & kawah aktif" }
+        ]
+      },
+      {
+        island: "3. Bali dan Nusa Tenggara",
+        items: [
+          { name: "Gunung Rinjani", loc: "Lombok, NTB", elev: "3.726 mdpl", level: "mahir", levelText: "Mahir", track: "Sembalun / Senaru / Aik Berik (2–4 hari)", cost: "Rp650.000 – Rp1.500.000", highlight: "Danau Segara Anak & punggungan Pelawangan" },
+          { name: "Gunung Tambora", loc: "Sumbawa, NTB", elev: "2.850 mdpl", level: "menengah", levelText: "Menengah", track: "Pancasila / Doroncanga (2–3 hari)", cost: "Rp350.000 – Rp750.000", highlight: "Kaldera raksasa bekas letusan tahun 1815" },
+          { name: "Gunung Batur", loc: "Bali", elev: "1.717 mdpl", level: "pemula", levelText: "Pemula", track: "Toyabungkah / Pasar Agung Batur (±2–3 jam naik)", cost: "Rp150.000 – Rp380.000", highlight: "Pendakian singkat sunrise & Danau Batur" },
+          { name: "Gunung Agung", loc: "Karangasem, Bali", elev: "3.142 mdpl", level: "mahir", levelText: "Mahir", track: "Pura Pasar Agung / Besakih (1–2 hari)", cost: "Rp350.000 – Rp850.000", highlight: "Puncak tertinggi di Bali & panorama kawah" },
+          { name: "Gunung Mutis", loc: "Nusa Tenggara Timur", elev: "2.427 mdpl", level: "menengah", levelText: "Menengah", track: "Fatumnasi / Nenas (1–2 hari)", cost: "Rp250.000 – Rp600.000", highlight: "Hutan ampupu & dataran tinggi Timor Barat" }
+        ]
+      },
+      {
+        island: "4. Pulau Kalimantan",
+        items: [
+          { name: "Bukit Raya", loc: "Kalimantan Tengah", elev: "2.278 mdpl", level: "mahir", levelText: "Mahir", track: "Rantau Malam / Tumbang Haboi (3–5 hari)", cost: "Rp500.000 – Rp1.100.000", highlight: "Salah satu puncak tertinggi Kalimantan di TNBBBR" },
+          { name: "Gunung Raya", loc: "Kalimantan Barat", elev: "2.278 mdpl", level: "menengah", levelText: "Menengah", track: "Rantau Panjang / Bengkayang (2–3 hari)", cost: "Rp300.000 – Rp650.000", highlight: "Hutan hujan tropis & konservasi Cagar Alam Raya Pasi" },
+          { name: "Gunung Halau-Halau (Besar)", loc: "Kalimantan Selatan", elev: "1.892 mdpl", level: "menengah", levelText: "Menengah", track: "Kiyu / Hinas Kiri (2–3 hari)", cost: "Rp250.000 – Rp550.000", highlight: "Puncak tertinggi Pegunungan Meratus" },
+          { name: "Gunung Maras", loc: "Kep. Bangka Belitung", elev: "699 mdpl", level: "pemula", levelText: "Pemula", track: "Desa Petaling / Gunung Muda (±3–4 jam naik)", cost: "Rp100.000 – Rp250.000", highlight: "Puncak tertinggi Pulau Bangka & hutan tropis" }
+        ]
+      },
+      {
+        island: "5. Pulau Sulawesi",
+        items: [
+          { name: "Gunung Latimojong (Bulu Rante Mario)", loc: "Sulawesi Selatan", elev: "3.478 mdpl", level: "mahir", levelText: "Mahir", track: "Karangan (2–4 hari)", cost: "Rp350.000 – Rp750.000", highlight: "Titik tertinggi di Pulau Sulawesi & hutan lumut" },
+          { name: "Gunung Nokilalaki", loc: "Sulawesi Tengah", elev: "2.355 mdpl", level: "menengah", levelText: "Menengah", track: "Kamarora / Lindu (2–3 hari)", cost: "Rp300.000 – Rp650.000", highlight: "Kawasan TN Lore Lindu & danau di puncak" },
+          { name: "Gunung Mekongga", loc: "Sulawesi Tenggara", elev: "2.620 mdpl", level: "menengah", levelText: "Menengah", track: "Tinukari / Kolaka Utara (2–3 hari)", cost: "Rp300.000 – Rp650.000", highlight: "Puncak tertinggi di Sulawesi Tenggara" },
+          { name: "Gunung Klabat", loc: "Sulawesi Utara", elev: "1.995 mdpl", level: "pemula", levelText: "Pemula", track: "Airmadidi (±4–6 jam naik)", cost: "Rp120.000 – Rp280.000", highlight: "Puncak tertinggi Sulawesi Utara & Teluk Manado" },
+          { name: "Gunung Gandang Dewata", loc: "Sulawesi Barat", elev: "3.074 mdpl", level: "mahir", levelText: "Mahir", track: "Rante Pongko / Mamasa (3–5 hari)", cost: "Rp450.000 – Rp950.000", highlight: "Puncak tertinggi Sulawesi Barat dengan jalur rimba" }
+        ]
+      },
+      {
+        island: "6. Maluku",
+        items: [
+          { name: "Gunung Binaiya", loc: "Maluku (Pulau Seram)", elev: "3.027 mdpl", level: "mahir", levelText: "Mahir", track: "Piliana / Kanikeh / Masohi (4–7 hari)", cost: "Rp750.000 – Rp1.600.000", highlight: "Salah satu dari 7 Puncak Tertinggi Indonesia" },
+          { name: "Gunung Gamalama", loc: "Maluku Utara (Ternate)", elev: "1.715 mdpl", level: "pemula", levelText: "Pemula", track: "Moya / Kelurahan Marikurubu (±3–5 jam naik)", cost: "Rp120.000 – Rp280.000", highlight: "Gunung api ikonik Ternate & panorama laut Maluku" }
+        ]
+      },
+      {
+        island: "7. Papua",
+        items: [
+          { name: "Puncak Jaya (Carstensz Pyramid)", loc: "Papua Tengah", elev: "4.884 mdpl", level: "mahir", levelText: "Mahir", track: "Sugapa / Lembah Kuning (ekspedisi)", cost: "Ekspedisi khusus (operator resmi)", highlight: "Puncak tertinggi Indonesia & Oseania" },
+          { name: "Pegunungan Arfak", loc: "Papua Barat", elev: "±2.955 mdpl", level: "menengah", levelText: "Menengah", track: "Danau Anggi / Manokwari (2–3 hari)", cost: "Rp450.000 – Rp950.000", highlight: "Dataran tinggi sejuk dekat Danau Anggi" },
+          { name: "Pegunungan Cyclops", loc: "Papua", elev: "±2.000 mdpl", level: "menengah", levelText: "Menengah", track: "Sentani / Jayapura (1–2 hari)", cost: "Rp250.000 – Rp600.000", highlight: "Hutan tropis pesisir & panorama Danau Sentani" }
+        ]
+      }
     ];
 
+    // Render 200 Pendaki
     const hikers = build200Hikers();
     let activeFilter = "all";
     let searchQuery = "";
@@ -792,14 +757,7 @@
         .map(
           (h) => `
           <article class="card" data-id="${h.id}">
-            <div class="thumb">
-              <img
-                src="${h.imgUrl}"
-                alt="${h.name} - ${h.hijabLabel} dari ${h.origin}"
-                loading="lazy"
-                onerror="this.onerror=null;this.src='${h.fallback}';"
-              />
-            </div>
+            <div class="art-box">${renderCharacterSvg(h)}</div>
             <div class="card-body">
               <div class="tag-row">
                 <span class="tag">${h.hijabLabel}</span>
@@ -813,7 +771,7 @@
         )
         .join("");
 
-      galleryCounter.textContent = `Menampilkan ${shown.length} dari ${filtered.length} hasil (Total katalog: 200)`;
+      galleryCounter.textContent = `Menampilkan ${shown.length} dari ${filtered.length} (Total: 200)`;
       loadMoreBtn.style.display = shown.length < filtered.length ? "inline-block" : "none";
       showAllBtn.style.display = shown.length < filtered.length ? "inline-block" : "none";
     }
@@ -844,9 +802,9 @@
       renderGallery();
     });
 
-    // Modal Lightbox
+    // Modal
     const modal = document.getElementById("photoModal");
-    const modalImg = document.getElementById("modalImg");
+    const modalArt = document.getElementById("modalArt");
     const modalTags = document.getElementById("modalTags");
     const modalTitle = document.getElementById("modalTitle");
     const modalSub = document.getElementById("modalSub");
@@ -859,12 +817,7 @@
       const item = hikers.find((x) => x.id === Number(card.dataset.id));
       if (!item) return;
 
-      modalImg.onerror = () => {
-        modalImg.onerror = null;
-        modalImg.src = item.fallback;
-      };
-      modalImg.src = item.imgUrl;
-      modalImg.alt = item.name;
+      modalArt.innerHTML = renderCharacterSvg(item);
       modalTags.innerHTML = `<span class="tag">${item.hijabLabel}</span><span class="tag alt">${item.originLabel}</span><span class="tag alt">#${item.id}</span>`;
       modalTitle.textContent = item.name;
       modalSub.textContent = `Asal: ${item.origin} • Destinasi: ${item.peak}`;
@@ -884,59 +837,77 @@
       if (e.key === "Escape") hideModal();
     });
 
-    // Render 38 Gunung Per Provinsi
-    const mountainsGrid = document.getElementById("mountainsGrid");
+    // Render Tabel Gunung
+    const mountainsContainer = document.getElementById("mountainsContainer");
     const mountainCounter = document.getElementById("mountainCounter");
-    const mountainCountPill = document.getElementById("mountainCountPill");
     const islandFilter = document.getElementById("islandFilter");
     const mountainSearch = document.getElementById("mountainSearch");
 
-    mountainCountPill.innerHTML = `<strong>${MOUNTAINS_38.length}</strong> Gunung Provinsi`;
+    const totalMountains = MOUNTAIN_GROUPS.reduce((sum, g) => sum + g.items.length, 0);
 
     function renderMountains() {
-      const isl = islandFilter.value;
+      const selectedIsland = islandFilter.value;
       const q = mountainSearch.value.trim().toLowerCase();
+      let shownCount = 0;
 
-      const list = MOUNTAINS_38.filter((m) => {
-        const matchIsl = isl === "all" || m.island === isl;
-        const matchQ =
-          !q ||
-          m.prov.toLowerCase().includes(q) ||
-          m.name.toLowerCase().includes(q) ||
-          m.track.toLowerCase().includes(q) ||
-          m.desc.toLowerCase().includes(q);
-        return matchIsl && matchQ;
-      });
+      const html = MOUNTAIN_GROUPS.filter((g) => selectedIsland === "all" || g.island === selectedIsland)
+        .map((g) => {
+          const rows = g.items.filter((m) => {
+            if (!q) return true;
+            return (
+              m.name.toLowerCase().includes(q) ||
+              m.loc.toLowerCase().includes(q) ||
+              m.elev.toLowerCase().includes(q) ||
+              m.track.toLowerCase().includes(q) ||
+              m.cost.toLowerCase().includes(q) ||
+              m.highlight.toLowerCase().includes(q)
+            );
+          });
 
-      mountainsGrid.innerHTML = list
-        .map((m, idx) => {
-          const photo = PHOTO_POOLS.mountain[idx % PHOTO_POOLS.mountain.length];
-          const fb = makeFallbackDataUri(m.prov, "#18221d", "#d9a760");
+          if (!rows.length) return "";
+          shownCount += rows.length;
+
           return `
-            <article class="m-card">
-              <div class="m-photo">
-                <img
-                  src="${photo}"
-                  alt="${m.name} - ${m.prov}"
-                  loading="lazy"
-                  onerror="this.onerror=null;this.src='${fb}';"
-                />
-              </div>
-              <div class="m-content">
-                <div class="m-prov">${m.prov} • ${m.island}</div>
-                <h3 class="m-name">${m.name}</h3>
-                <p class="m-desc">${m.desc}</p>
-                <div class="m-info">
-                  <div><strong>Jalur / Track:</strong> <span>${m.track}</span></div>
-                  <div><strong>Estimasi Biaya:</strong> <span>${m.cost}</span></div>
-                </div>
-              </div>
-            </article>
+            <h2 class="island-heading">${g.island}</h2>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Nama Gunung</th>
+                    <th>Lokasi</th>
+                    <th>Ketinggian</th>
+                    <th>Tingkat</th>
+                    <th>Jalur / Track</th>
+                    <th>Estimasi Biaya</th>
+                    <th>Daya Tarik Utama</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${rows
+                    .map(
+                      (m) => `
+                    <tr>
+                      <td><strong>${m.name}</strong></td>
+                      <td>${m.loc}</td>
+                      <td>${m.elev}</td>
+                      <td><span class="badge ${m.level}">${m.levelText}</span></td>
+                      <td>${m.track}</td>
+                      <td>${m.cost}</td>
+                      <td>${m.highlight}</td>
+                    </tr>
+                  `
+                    )
+                    .join("")}
+                </tbody>
+              </table>
+            </div>
           `;
         })
         .join("");
 
-      mountainCounter.textContent = `Menampilkan ${list.length} dari ${MOUNTAINS_38.length} gunung`;
+      mountainsContainer.innerHTML =
+        html || `<p style="color: var(--muted); padding: 14px 0;">Tidak ada gunung yang cocok dengan pencarian Anda.</p>`;
+      mountainCounter.textContent = `Menampilkan ${shownCount} dari ${totalMountains} gunung`;
     }
 
     islandFilter.addEventListener("change", renderMountains);
